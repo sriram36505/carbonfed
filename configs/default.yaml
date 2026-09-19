@@ -1,0 +1,55 @@
+# CarbonFed default configuration (Table 2 of the paper)
+
+env:
+  n_regions: 4
+  dt_minutes: 5
+  episode_steps: 2016
+  carbon_min: 120.0            # gCO2/kWh
+  carbon_max: 430.0
+  pue_range: [1.2, 1.6]
+  p_idle_w: 120.0
+  p_peak_w: 350.0
+  slo_latency_ms: 200.0
+  deferral_max: 0.30
+  freq_min: 0.6
+
+agent:
+  gat_hidden: 128
+  gat_heads: 4
+  history_len: 24
+  forecast_horizon: 12         # 12 steps = 1 hour
+  n_quantiles: 25
+  top_quantiles_to_drop: 2     # TQC truncation
+  cvar_alpha: 0.5              # risk level; 1.0 recovers mean optimization
+  gamma: 0.99
+  tau: 0.005                   # Polyak averaging
+  learning_rate: 3.0e-4
+  dual_lr: 1.0e-3
+  lambda_init: 0.1
+  slo_budget: 0.02             # d = 2% discounted violation bound
+  policy_delay: 2              # TD3 delayed actor updates
+  target_noise: 0.2
+  noise_clip: 0.5
+  freq_min: 0.6
+  deferral_max: 0.30
+
+federated:
+  n_clients: 4
+  aggregation_interval: 10     # K rounds between aggregations
+  carbon_kappa: 1.5            # kappa in Eq. 13; 0 = plain FedAvg
+  ditto_mu: 0.1                # personalization strength, Eq. 14
+  dp_epsilon: 8.0
+  dp_delta: 1.0e-5
+  dp_clip_norm: 1.0
+
+train:
+  episodes: 1000
+  batch_size: 256
+  buffer_capacity: 200000
+  warmup_steps: 1000
+  exploration_noise: 0.1
+  updates_per_step: 1
+  eval_every: 25
+  seeds: [0, 1, 2, 3, 4]
+  device: cpu
+  log_dir: runs

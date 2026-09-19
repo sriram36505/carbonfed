@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article."
+title: "CarbonFed: risk-aware federated graph reinforcement learning for carbon-aware workload orchestration"
+authors:
+  - family-names: "D"
+    given-names: "Viji"
+    affiliation: "SRM Institute of Science and Technology"
+  - family-names: "Saranya"
+    given-names: "P."
+    affiliation: "SRM Institute of Science and Technology"
+  - family-names: "Gao"
+    given-names: "Xiao-Zhi"
+    affiliation: "University of Eastern Finland"
+  - family-names: "R"
+    given-names: "Sriram"
+    affiliation: "SRM Institute of Science and Technology"
+license: MIT
+repository-code: "https://github.com/<your-username>/carbonfed"
