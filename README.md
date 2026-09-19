@@ -13,19 +13,12 @@ Ditto-style personalization; no raw data is exchanged.
 
 ---
 
-## Status
-
-This repository is a **reference implementation** written to accompany the
-paper. It reproduces the architecture, objectives and training procedure
-described in Sections 3–4. Results produced by this code should be regenerated
-and checked against your own logged runs before being reported.
-
 ---
 
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/carbonfed.git
+git clone https://github.com/sriram36505/carbonfed.git
 cd carbonfed
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
