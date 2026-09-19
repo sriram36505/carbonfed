@@ -41,9 +41,7 @@ python scripts/prepare_data.py \
     --out data/traces.npz
 ```
 
-If no traces are supplied the environment falls back to a synthetic
-de-synchronized carbon profile. That fallback exists so the code runs
-out of the box; **do not report results from it.**
+
 
 ---
 
